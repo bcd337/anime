@@ -2,7 +2,7 @@ import { screen, render } from '@testing-library/react'
 import AnimeControl from './animeControl.component'
 
 describe('<AnimeControl />', () => {
-  test('It should have ItemPaging', async () => {
+  test('It should have ItemPaging', () => {
     render(<AnimeControl 
       onChangePagingMode={jest.fn()}
       onPageChange={jest.fn()} 
@@ -11,10 +11,10 @@ describe('<AnimeControl />', () => {
       pagingMode={true}
     />)
 
-    await expect(screen.findByTestId("animeControl-ItemPaging")).resolves.toBeInTheDocument()
+    expect(screen.getByTestId("animeControl-ItemPaging")).toBeInTheDocument()
   })
 
-  test('It should not have ItemPaging', async () => {
+  test('It should not have ItemPaging', () => {
     render(<AnimeControl 
       onChangePagingMode={jest.fn()}
       onPageChange={jest.fn()} 
@@ -26,7 +26,7 @@ describe('<AnimeControl />', () => {
     expect(screen.queryByTestId("animeControl-ItemPaging")).not.toBeInTheDocument()
   })
 
-  test('It should not have ItemPaging with pagingMode=false', async () => {
+  test('It should not have ItemPaging with pagingMode=false', () => {
     render(<AnimeControl 
       onChangePagingMode={jest.fn()}
       onPageChange={jest.fn()} 

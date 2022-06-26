@@ -2,9 +2,9 @@ import { screen, render } from '@testing-library/react'
 import AnimeBannerImage from './animeBannerImage.component'
 
 describe('<AnimeBannerImage />', () => {
-  test('It should mount', async () => {
+  test('It should mount', () => {
     render(<AnimeBannerImage src="" />)
 
-    await expect(screen.findByTestId("Image")).resolves.toBeInTheDocument()
+    expect(screen.getByTestId("Image")).toBeInTheDocument()
   })
 })

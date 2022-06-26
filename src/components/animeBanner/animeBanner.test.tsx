@@ -24,10 +24,11 @@ describe('<AnimeBanner />', () => {
     jest.spyOn(useCollection, 'useAllCollectionName').mockReturnValue(["test"])
   })
 
-  test('It should clickable', async () => {
+  test('It should clickable', () => {
     render(<AnimeBanner src="" image={coverImage} title={title} id={1} />)
 
-    const ContainerButton = await screen.findByTestId("AnimeBanner-ContainerButton")
+    const ContainerButton = screen.getByTestId("AnimeBanner-ContainerButton")
+    expect(ContainerButton).toBeInTheDocument()
 
     fireEvent.click(ContainerButton)
 
@@ -36,28 +37,28 @@ describe('<AnimeBanner />', () => {
     render(<AnimeBanner src="" image={coverImage} title={title} id={1} />)
   })
 
-  test('It should have title romaji', async () => {
+  test('It should have title romaji', () => {
     render(<AnimeBanner src="" image={coverImage} title={title} id={1} />)
 
-    await expect(screen.findByTestId("AnimeBanner-TitleContainer")).resolves.toHaveTextContent(title.romaji)
+    expect(screen.getByTestId("AnimeBanner-TitleContainer")).toHaveTextContent(title.romaji)
   })
 
-  test('It should have title english', async () => {
+  test('It should have title english', () => {
     render(<AnimeBanner src="" image={coverImage} title={{
       ...title,
       romaji: '',
     }} id={1} />)
 
-    await expect(screen.findByTestId("AnimeBanner-TitleContainer")).resolves.toHaveTextContent(title.english)
+    expect(screen.getByTestId("AnimeBanner-TitleContainer")).toHaveTextContent(title.english)
   })
 
-  test('It should have title native', async () => {
+  test('It should have title native', () => {
     render(<AnimeBanner src="" image={coverImage} title={{
       ...title,
       romaji: '',
       english: '',
     }} id={1} />)
 
-    await expect(screen.findByTestId("AnimeBanner-TitleContainer")).resolves.toHaveTextContent(title.native)
+    expect(screen.getByTestId("AnimeBanner-TitleContainer")).toHaveTextContent(title.native)
   })
 })

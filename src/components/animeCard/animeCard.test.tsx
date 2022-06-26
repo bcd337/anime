@@ -16,14 +16,14 @@ const title: Title = {
 }
 
 describe('<AnimeCard />', () => {
-  test('It should have title romaji with image medium', async () => {
+  test('It should have title romaji with image medium', () => {
     render(<AnimeCard image={coverImage} title={title} id={1} />)
 
-    await expect(screen.findByTestId("AnimeCard-TitleContainer")).resolves.toHaveTextContent(title.romaji)
-    await expect(screen.findByTestId("Image")).resolves.toHaveAttribute('src', coverImage.medium)
+    expect(screen.getByTestId("AnimeCard-TitleContainer")).toHaveTextContent(title.romaji)
+    expect(screen.getByTestId("Image")).toHaveAttribute('src', coverImage.medium)
   })
 
-  test('It should have title english with image medium', async () => {
+  test('It should have title english with image medium', () => {
     render(<AnimeCard
       image={{
         ...coverImage,
@@ -36,11 +36,11 @@ describe('<AnimeCard />', () => {
       id={1}
     />)
 
-    await expect(screen.findByTestId("AnimeCard-TitleContainer")).resolves.toHaveTextContent(title.english)
-    await expect(screen.findByTestId("Image")).resolves.toHaveAttribute('src', coverImage.large)
+    expect(screen.getByTestId("AnimeCard-TitleContainer")).toHaveTextContent(title.english)
+    expect(screen.getByTestId("Image")).toHaveAttribute('src', coverImage.large)
   })
 
-  test('It should have title native', async () => {
+  test('It should have title native', () => {
     render(<AnimeCard
       image={{
         ...coverImage,
@@ -55,25 +55,25 @@ describe('<AnimeCard />', () => {
       id={1}
     />)
 
-    await expect(screen.findByTestId("AnimeCard-TitleContainer")).resolves.toHaveTextContent(title.native)
-    await expect(screen.findByTestId("Image")).resolves.toHaveAttribute('src', coverImage.extraLarge)
+    expect(screen.getByTestId("AnimeCard-TitleContainer")).toHaveTextContent(title.native)
+    expect(screen.getByTestId("Image")).toHaveAttribute('src', coverImage.extraLarge)
   })
 
-  test('It should not have title', async () => {
+  test('It should not have title', () => {
     render(<AnimeCard image={coverImage} shadow={true} />)
 
     expect(screen.queryByTestId("AnimeCard-TitleContainer")).not.toBeInTheDocument()
   })
 
-  test('It shoul have CollectionAction', async () => {
+  test('It shoul have CollectionAction', () => {
     render(<AnimeCard image={coverImage} shadow={true} title={title} id={1} />)
 
-    await expect(screen.findByTestId("CollectionAction")).resolves.toBeInTheDocument()
+    expect(screen.getByTestId("CollectionAction")).toBeInTheDocument()
   })
 
-  test('It should have DeleteAction', async () => {
+  test('It should have DeleteAction', () => {
     render(<AnimeCard image={coverImage} shadow={true} title={title} id={1} deleteModeFromCollection="deleteModeFromCollection" />)
 
-    await expect(screen.findByTestId("DeleteAction")).resolves.toBeInTheDocument()
+    expect(screen.getByTestId("DeleteAction")).toBeInTheDocument()
   })
 })

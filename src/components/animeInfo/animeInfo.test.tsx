@@ -15,7 +15,7 @@ const studio: Studio[] = [{
 }]
 
 describe('<AnimeInfo />', () => {
-  test('It should have studios', async () => {
+  test('It should have studios', () => {
     render(<AnimeInfo 
       episodes={1}
       format="format"
@@ -33,10 +33,10 @@ describe('<AnimeInfo />', () => {
       genres={["1", "2"]}
     />)
 
-    await expect(screen.findByTestId("AnimeInfo-studios")).resolves.toHaveTextContent("string")
+    expect(screen.getByTestId("AnimeInfo-studios")).toHaveTextContent("string")
   })
 
-  test('It should not have studios', async () => {
+  test('It should not have studios', () => {
     render(<AnimeInfo 
       episodes={1}
       format="format"
@@ -54,6 +54,6 @@ describe('<AnimeInfo />', () => {
       genres={["1", "2"]}
     />)
 
-    await expect(screen.findByTestId("AnimeInfo-studios")).resolves.toHaveTextContent("")
+    expect(screen.getByTestId("AnimeInfo-studios")).toHaveTextContent("")
   })
 })
