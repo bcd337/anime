@@ -1,7 +1,7 @@
-import List from "pages/anime/list/list.anime"
-import Detail from "pages/anime/detail/detail.anime"
-import ListCollection from 'pages/collection/list/list.collection'
-import DetailCollection from 'pages/collection/detail/detail.collection'
+import List from "pages/anime/list"
+import Detail from "pages/anime/detail"
+import ListCollection from 'pages/collection/list'
+import DetailCollection from 'pages/collection/detail'
 
 const routes = [
   {
