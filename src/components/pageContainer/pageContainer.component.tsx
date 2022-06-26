@@ -7,7 +7,7 @@ const PageContainer: React.FC<{ children: React.ReactNode, title: string }> = ({
   title,
 }) => {
   return (
-    <Container>
+    <Container data-testid="PageContainer">
       <Helmet>
         <title>{title}</title>
         <meta name="description" content={title} />

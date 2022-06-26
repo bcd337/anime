@@ -17,7 +17,7 @@ const Main: React.FC = () => {
     <Theme>
       <ApolloProvider client={apollo}>
         <HelmetProvider>
-          <Container>
+          <Container data-testid="Main">
             <Header />
             {router}
             <Footer />
