@@ -21,10 +21,12 @@ const Detail = () => {
 
   const { title, bannerImage, coverImage, description } = data?.Media
 
+  const showTitle = title ? title.romaji || title.english || title.native : 'Anime'
+
   const onBack = () => navigate(-1)
 
   return (
-    <PageContainer>
+    <PageContainer title={`Anime Collection - ${showTitle}`}>
       <ButtonBack onClick={onBack}>
         <Arrow />
       </ButtonBack>

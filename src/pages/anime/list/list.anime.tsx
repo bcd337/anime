@@ -6,7 +6,6 @@ import manageCollection from 'modal/manageCollection'
 
 import { IconSortAsc, IconSortDesc } from 'assets/svg'
 
-import GrowContainer from 'components/growContainer'
 import PageContainer from 'components/pageContainer'
 import ButtonCicle from 'components/buttonCicle'
 import AnimeControl from 'components/animeControl'
@@ -14,7 +13,7 @@ import AnimeLists from 'components/animeLists'
 import Title from 'components/title'
 
 import option from 'common/constant/sort.json'
-import { TitleContainer, SortContainer, Select, ButtonManage } from './list.styled'
+import { TitleContainer, SortContainer, Select, ButtonManage, ContainerControl, ContainerBody } from './list.styled'
 
 const List = () => { 
   const [pagingMode, setPagingMode] = useStateHistory('pagingMode', true)
@@ -60,40 +59,44 @@ const List = () => {
   const onManage = () => manageCollection()
 
   return (
-    <PageContainer>
-      <TitleContainer>
-        <Title>
-          Anime List
-        </Title>
-        <ButtonManage onClick={onManage}>Manage Collection</ButtonManage>
-        <SortContainer>
-          <Select onChange={onSort} value={sort} options={option} />
-          <ButtonCicle title={orderAsc ? 'Ascending' : 'Descending'}>
-            {orderAsc && <IconSortAsc onClick={onToogleSort} />}
-            {!orderAsc && <IconSortDesc onClick={onToogleSort} />}
-          </ButtonCicle>
-        </SortContainer>
-      </TitleContainer>
-      <GrowContainer>
-        <AnimeLists
-          loading={loading}
-          error={!!error}
-          data={data}
-          addData={!pagingMode ? additionalData : []}
-          onLoadNextPage={onLoadNextPage}
+    <>
+      <PageContainer title="Anime Collection - Anime List">
+        <TitleContainer>
+          <Title>
+            Anime List
+          </Title>
+          <ButtonManage onClick={onManage}>Manage Collection</ButtonManage>
+          <SortContainer>
+            <Select onChange={onSort} value={sort} options={option} />
+            <ButtonCicle title={orderAsc ? 'Ascending' : 'Descending'}>
+              {orderAsc && <IconSortAsc onClick={onToogleSort} />}
+              {!orderAsc && <IconSortDesc onClick={onToogleSort} />}
+            </ButtonCicle>
+          </SortContainer>
+        </TitleContainer>
+        <ContainerBody>
+          <AnimeLists
+            loading={loading}
+            error={!!error}
+            data={data}
+            addData={!pagingMode ? additionalData : []}
+            onLoadNextPage={onLoadNextPage}
+            pagingMode={pagingMode}
+            morePageLoading={morePageLoading}
+          />
+          {morePageLoading && !pagingMode && "Loading..."}
+        </ContainerBody>
+      </PageContainer>
+      <ContainerControl>
+        <AnimeControl
+          onPageChange={onPageChange}
+          pageCount={(data || previousData)?.Page.pageInfo.lastPage || 0}
+          page={page}
+          onChangePagingMode={onChangePagingMode}
           pagingMode={pagingMode}
-          morePageLoading={morePageLoading}
         />
-        {morePageLoading && !pagingMode && "Loading..."}
-      </GrowContainer>
-      <AnimeControl
-        onPageChange={onPageChange}
-        pageCount={(data || previousData)?.Page.pageInfo.lastPage || 0}
-        page={page}
-        onChangePagingMode={onChangePagingMode}
-        pagingMode={pagingMode}
-      />
-    </PageContainer>
+      </ContainerControl>
+    </>
   )
 }
 

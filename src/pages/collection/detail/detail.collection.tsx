@@ -24,7 +24,7 @@ const Detail = () => {
   }
 
   return (
-    <PageContainer>
+    <PageContainer  title={`Anime Collection - ${name} Collection`}>
       <TitleContainer>
         <Title>
           Detail Collection
@@ -49,7 +49,7 @@ const Detail = () => {
               />
             </ContainerLink>
           )}
-      </AnimeList>
+        </AnimeList>
       </GrowContainer>
     </PageContainer>
   )

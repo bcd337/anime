@@ -16,7 +16,7 @@ const List = () => {
   }
 
   return (
-    <PageContainer>
+    <PageContainer title="Anime Collection - Collection List">
       <TitleContainer>
         <Title>
           Collection List

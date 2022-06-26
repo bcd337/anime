@@ -4,15 +4,16 @@ export const Container = styled.div`
   position: sticky;
   bottom: 0;
   display: flex;
-  width: calc(100% + 3rem);
   left: 0;
   height: 4rem;
   align-items: center;
   justify-content: flex-start;
-  margin-left: -1.5rem;
   background: var(--light);
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+  max-width: 90rem;
+  width: 100%;
+  margin: auto;
 `
 
 export const Item = styled.div<{ active?: boolean }>`

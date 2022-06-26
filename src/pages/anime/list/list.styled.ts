@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import SelectElement from 'components/select'
+import GrowContainer from 'components/growContainer'
 
 export const TitleContainer = styled.div`
   display: flex;
@@ -21,7 +22,7 @@ export const Select = styled(SelectElement)`
 export const ButtonManage = styled.div`
   font-size: 1rem;
   border: none;
-  background: white;
+  background-color: var(--light);
   border-radius: 0.4rem;
   height: 2.75rem;
   padding: 0 1rem;
@@ -29,4 +30,14 @@ export const ButtonManage = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+`
+
+export const ContainerControl = styled.div`
+  background-color: var(--light);
+  position: sticky;
+  bottom: 0;
+`
+
+export const ContainerBody = styled(GrowContainer)`
+  padding-bottom: 1.5rem;
 `
