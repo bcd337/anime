@@ -27,7 +27,7 @@ describe('<AnimeBanner />', () => {
   test('It should clickable', async () => {
     render(<AnimeBanner src="" image={coverImage} title={title} id={1} />)
 
-    const ContainerButton = await screen.findByTestId("ContainerButton")
+    const ContainerButton = await screen.findByTestId("AnimeBanner-ContainerButton")
 
     fireEvent.click(ContainerButton)
 
@@ -39,7 +39,7 @@ describe('<AnimeBanner />', () => {
   test('It should have title romaji', async () => {
     render(<AnimeBanner src="" image={coverImage} title={title} id={1} />)
 
-    await expect(screen.findByTestId("TitleContainer")).resolves.toHaveTextContent(title.romaji)
+    await expect(screen.findByTestId("AnimeBanner-TitleContainer")).resolves.toHaveTextContent(title.romaji)
   })
 
   test('It should have title english', async () => {
@@ -48,7 +48,7 @@ describe('<AnimeBanner />', () => {
       romaji: '',
     }} id={1} />)
 
-    await expect(screen.findByTestId("TitleContainer")).resolves.toHaveTextContent(title.english)
+    await expect(screen.findByTestId("AnimeBanner-TitleContainer")).resolves.toHaveTextContent(title.english)
   })
 
   test('It should have title native', async () => {
@@ -58,19 +58,6 @@ describe('<AnimeBanner />', () => {
       english: '',
     }} id={1} />)
 
-    await expect(screen.findByTestId("TitleContainer")).resolves.toHaveTextContent(title.native)
-
-    render(<AnimeBanner src="" image={coverImage} title={{
-      ...title,
-      romaji: '',
-      english: '',
-    }} id={1} />)
-
-    render(<AnimeBanner src="" image={coverImage} title={{
-      ...title,
-      romaji: '',
-      english: '',
-      native: '',
-    }} id={1} />)
+    await expect(screen.findByTestId("AnimeBanner-TitleContainer")).resolves.toHaveTextContent(title.native)
   })
 })

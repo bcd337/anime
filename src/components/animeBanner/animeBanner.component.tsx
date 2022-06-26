@@ -32,12 +32,12 @@ const AnimeBanner: React.FC<{ id: number, src: string, image: CoverImage, title:
       <Image src={src} />
       <ContainerAfterImage>
         <Card image={image} />
-        <ContainerButton onClick={toogleCollection} data-testid="ContainerButton">
+        <ContainerButton onClick={toogleCollection} data-testid="AnimeBanner-ContainerButton">
           <Button >{labelButton}</Button>
           <ContainerIcon isLove={collectionOfAnime.length > 0 }><IconHeart /></ContainerIcon>
         </ContainerButton>
       </ContainerAfterImage>
-      <TitleContainer data-testid="TitleContainer">{showTitle}</TitleContainer>
+      <TitleContainer data-testid="AnimeBanner-TitleContainer">{showTitle}</TitleContainer>
     </Container>
   )
 }
