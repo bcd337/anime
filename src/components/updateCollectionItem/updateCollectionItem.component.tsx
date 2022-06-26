@@ -20,7 +20,7 @@ const UpdateCollectionItem: React.FC<{
 
   return (
     <Container>
-      <ContainerItem onClick={onClick} colorFill={colorFill}>
+      <ContainerItem onClick={onClick} colorFill={colorFill} data-testid="UpdateCollectionItem-ContainerItem">
         <ContainerTitle>
           {name}
         </ContainerTitle>
@@ -28,7 +28,11 @@ const UpdateCollectionItem: React.FC<{
           <IconHeart />
         </ContainerIcon>
       </ContainerItem>
-      {deleteAble && <ContainerTrash colorFill={colorFill} onClick={onRemove}><IconTrash /></ContainerTrash>}
+      {deleteAble && (
+        <ContainerTrash colorFill={colorFill} onClick={onRemove} data-testid="UpdateCollectionItem-ContainerTrash">
+          <IconTrash />
+        </ContainerTrash>
+      )}
     </Container>
   )
 }
