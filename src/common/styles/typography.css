@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+:root {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 12px;
+  color: var(--color);
+}

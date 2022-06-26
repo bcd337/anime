@@ -1,0 +1,22 @@
+[
+  {
+    "value": "POPULARITY",
+    "label": "Popularity"
+  },
+  {
+    "value": "UPDATED_AT",
+    "label": "Latest updated"
+  },
+  {
+    "value": "TITLE_ROMAJI",
+    "label": "Title"
+  },
+  {
+    "value": "TRENDING",
+    "label": "Trending"
+  },
+  {
+    "value": "SCORE",
+    "label": "Average Score"
+  }
+]
