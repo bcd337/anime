@@ -24,7 +24,7 @@ const Detail = () => {
   }
 
   return (
-    <PageContainer  title={`Anime Collection - ${name} Collection`}>
+    <PageContainer title={`Anime Collection - ${name} Collection`}>
       <TitleContainer>
         <Title>
           Detail Collection
@@ -32,7 +32,7 @@ const Detail = () => {
       </TitleContainer>
       <ContainerName>
         {name}
-        <ContainerIcon title='Edit Collection Name' onClick={onChangeName}>
+        <ContainerIcon title='Edit Collection Name' onClick={onChangeName} data-testid="Detail-ContainerIcon">
           <IconEdit />
         </ContainerIcon>
       </ContainerName>

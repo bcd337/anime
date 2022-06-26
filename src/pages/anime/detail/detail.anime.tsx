@@ -13,11 +13,11 @@ const Detail = () => {
   const { id } = useParams()
   const { loading, error, data } = useGetAnimeDetail(Number(id))
 
-  if (loading) return <p>Loading...</p>
+  if (loading) return <p data-testid="Detail-loading">Loading...</p>
 
-  if (error) return <p>Error :(</p>
+  if (error) return <p data-testid="Detail-error">Error :(</p>
 
-  if (!data) return <p>Error : data not found(</p>
+  if (!data) return <p data-testid="Detail-no-data">Error : data not found(</p>
 
   const { title, bannerImage, coverImage, description } = data?.Media
 
