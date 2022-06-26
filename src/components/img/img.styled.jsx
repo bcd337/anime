@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-const Img = ({ onLoad, alt, load, ...props }) => <img onLoad={onLoad} alt={alt} {...props} fetchpriority="low" loading="lazy" crossOrigin="anonymous" />
+const Img = ({ onLoad, alt, load: _load, ...props }) => <img onLoad={onLoad} alt={alt} {...props} fetchpriority="low" loading="lazy" crossOrigin="anonymous" />
 
 export const ContainerImage = styled.div`
   background: linear-gradient(180deg, var(--light) 40%, var(--shadow-dark));
