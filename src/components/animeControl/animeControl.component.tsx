@@ -25,7 +25,7 @@ const animeControl: React.FC<{
         <IconPaging />
       </Item>
       {pagingMode && pageCount > 0 && (
-        <ItemPaging>
+        <ItemPaging data-testid="animeControl-ItemPaging">
           <ReactPaginate
             breakLabel={<IconDot />}
             nextLabel={<Arrow tail={false} direction="right" />}
@@ -35,7 +35,6 @@ const animeControl: React.FC<{
             forcePage={page}
             pageCount={pageCount}
             previousLabel={<Arrow tail={false} direction="left" />}
-            renderOnZeroPageCount={() => null}
           />
         </ItemPaging>
       )}
