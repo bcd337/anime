@@ -22,14 +22,14 @@ const ManageAnimeLists: React.FC<{
   onLoadNextPage,
 }) => {
   const { ref } = useInView({ threshold: 0, triggerOnce: false, onChange: onLoadNextPage })
-  if (loading) return <p>Loading...</p>
+  if (loading) return <p data-testid="ManageAnimeLists-loading">Loading...</p>
 
-  if (error) return <p>Error :(</p>
+  if (error) return <p data-testid="ManageAnimeLists-error">Error :(</p>
 
-  if (!data) return <p>data not found(</p>
+  if (!data) return <p data-testid="ManageAnimeLists-no-data">data not found(</p>
 
   return (
-    <Container>
+    <Container data-testid="ManageAnimeLists-Container">
       <ContainerTitle>
         <ContainerItem>Anime</ContainerItem>
         <ContainerCollection>Collection</ContainerCollection>
@@ -49,7 +49,7 @@ const ManageAnimeLists: React.FC<{
           </ContainerCollection>
         </ContainerCard>
       )}
-      {!morePageLoading && !pagingMode && <div ref={ref} />}
+      {!morePageLoading && !pagingMode && <div ref={ref} data-testid="ManageAnimeLists-div" />}
     </Container>
   )
 }
