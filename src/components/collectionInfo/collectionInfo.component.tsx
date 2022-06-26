@@ -27,7 +27,7 @@ const CollectionInfo: React.FC<{ id: number }> = ({ id }) => {
   if (collection.length === 0) return null
 
   return (
-    <Container>
+    <Container data-testid="CollectionInfo-Container">
       <ContainerTitle>Collection Info</ContainerTitle>
       <ContainerBody>
         {collection.map((name, i, arr) => <CollectionInfoItem name={name} key={name} color={color(configColor, (i + 1) / arr.length * 100)}/>)}
