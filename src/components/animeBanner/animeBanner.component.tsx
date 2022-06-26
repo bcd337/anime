@@ -13,7 +13,7 @@ const AnimeBanner: React.FC<{ id: number, src: string, image: CoverImage, title:
 }) => {
   const collectionOfAnime = useAllCollectionOfAnime(id)
 
-  const showTitle = title ? title.romaji || title.english || title.native : ''
+  const showTitle = title.romaji || title.english || title.native
 
   const toogleCollection: MouseEventHandler = async (event) => {
     event.preventDefault()
@@ -32,12 +32,12 @@ const AnimeBanner: React.FC<{ id: number, src: string, image: CoverImage, title:
       <Image src={src} />
       <ContainerAfterImage>
         <Card image={image} />
-        <ContainerButton onClick={toogleCollection}>
+        <ContainerButton onClick={toogleCollection} data-testid="ContainerButton">
           <Button >{labelButton}</Button>
           <ContainerIcon isLove={collectionOfAnime.length > 0 }><IconHeart /></ContainerIcon>
         </ContainerButton>
       </ContainerAfterImage>
-      <TitleContainer>{showTitle}</TitleContainer>
+      <TitleContainer data-testid="TitleContainer">{showTitle}</TitleContainer>
     </Container>
   )
 }
