@@ -52,8 +52,8 @@ const ManageCollection = () => {
       <SortContainer>
         <Select onChange={onSort} value={sort} options={option} />
         <ButtonSort title={orderAsc ? 'Ascending' : 'Descending'}>
-          {orderAsc && <IconSortAsc onClick={onToogleSort} />}
-          {!orderAsc && <IconSortDesc onClick={onToogleSort} />}
+          {orderAsc && <IconSortAsc onClick={onToogleSort} data-testid="ManageCollection-toogle-sort" />}
+          {!orderAsc && <IconSortDesc onClick={onToogleSort} data-testid="ManageCollection-toogle-sort" />}
         </ButtonSort>
       </SortContainer>
       <ManageAnimeLists
