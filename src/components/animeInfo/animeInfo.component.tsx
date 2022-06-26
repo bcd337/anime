@@ -77,7 +77,7 @@ const AnimeInfo: React.FC<{
         </Item>
         <Item>
           <ItemTitle>Studios</ItemTitle>
-          <ItemBody>{studios.nodes.map((value) => value.name).join(', ')}</ItemBody>
+          <ItemBody data-testid="AnimeInfo-studios">{studios.nodes.map((value) => value.name).join(', ')}</ItemBody>
         </Item>
         <Item>
           <ItemTitle>Genres</ItemTitle>
