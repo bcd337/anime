@@ -9,7 +9,6 @@ import { Container, ContainerImage, ContainerDesc, Image, ContainerAction, Actio
 const CollectionListItem: React.FC<{ name: string, media: Media[], className?: string }> = ({ name, media, className }) => {
 
   const onChangeName = async () => {
-    if (!name) return
     const newName = await createCollectionName()
     if (!newName) return
     renameCollection(name, newName)
@@ -36,10 +35,10 @@ const CollectionListItem: React.FC<{ name: string, media: Media[], className?: s
       <Link to={`/collection/${name}`}>
         <ContainerImage>
           {media.slice(0, 4).map(({ title, coverImage, id }) => {
-            const showTitle = title ? title.romaji || title.english || title.native : ''
+            const showTitle = title.romaji || title.english || title.native
             const showImage = coverImage.medium || coverImage.large || coverImage.extraLarge
 
-            if (!showImage) return <ImageColor color={coverImage.color}/>
+            if (!showImage) return <ImageColor key={id} color={coverImage.color}/>
             return <Image key={id} src={showImage} alt={showTitle} />
           })}
         </ContainerImage>
@@ -62,8 +61,8 @@ const CollectionListItem: React.FC<{ name: string, media: Media[], className?: s
           </Table>
         </div>
         <ContainerAction>
-          <ActionButton onClick={onChangeName}>Edit Collection Name</ActionButton>
-          <ActionButton onClick={onDelete}>Remove Collection</ActionButton>
+          <ActionButton onClick={onChangeName} data-testid="CollectionListItem-edit">Edit Collection Name</ActionButton>
+          <ActionButton onClick={onDelete} data-testid="CollectionListItem-remove">Remove Collection</ActionButton>
         </ContainerAction>
       </ContainerDesc>
     </Container>
