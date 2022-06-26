@@ -19,7 +19,7 @@ const Img: React.FC<{ alt?: string, src: string, className?: string }> = ({ alt,
 
   return (
     <ContainerImage className={className}>
-      <Image onLoad={onload} onError={onerror} alt={alt} src={src} load={load} />
+      <Image onLoad={onload} onError={onerror} alt={alt} src={src} load={load} data-testid="Image" />
     </ContainerImage>
   )
 }

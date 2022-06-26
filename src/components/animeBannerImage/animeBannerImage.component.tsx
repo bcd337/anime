@@ -5,7 +5,7 @@ const AnimeBannerImage: React.FC<{ src: string, className?: string }> = ({
   className,
 }) => {
   return (
-    <Image src={src} className={className} />
+    <Image src={src} className={className} data-testid="Image" />
   )
 }
 
