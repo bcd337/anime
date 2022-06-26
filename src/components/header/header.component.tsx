@@ -2,7 +2,7 @@ import { Container, Item, WidthControl } from './header.styled'
 
 const Header = () => {
   return (
-    <Container>
+    <Container data-testid="Header">
       <WidthControl>
         <Item to="/">Home</Item>
         <Item to="/collection">Collection</Item>

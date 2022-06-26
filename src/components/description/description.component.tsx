@@ -6,7 +6,7 @@ import { Container, ContainerBody, ContainerTitle } from './description.styled'
 const Description: React.FC<{ desc: string }> = ({ desc }) => {
 
   return (
-    <Container>
+    <Container data-testid="Description-Container">
       <ContainerTitle>Description</ContainerTitle>
       <ContainerBody dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(desc) }} />
     </Container>
