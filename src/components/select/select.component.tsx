@@ -13,7 +13,7 @@ const Select: React.FC<{
   options,
 }) => {
   return (
-    <Container onChange={onChange} value={value} className={className}>
+    <Container onChange={onChange} value={value} className={className} data-testid="Select">
       {options.map((v) => <option key={v.value} value={v.value}>{v.label}</option>)}
     </Container>
   )
