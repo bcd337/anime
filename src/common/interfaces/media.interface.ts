@@ -57,5 +57,4 @@ export interface AnimesPage {
 export interface MediaCollection {
   name: string
   media: Media[]
-  lastUsed: boolean
 }

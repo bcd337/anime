@@ -29,7 +29,6 @@ export const addMediaToCollection = (name: string, anime: Media) => {
       {
         name,
         media: [anime],
-        lastUsed: true,
       }
     ])
   }
@@ -37,12 +36,10 @@ export const addMediaToCollection = (name: string, anime: Media) => {
   const newData = collectionVar().map((value) => {
     if (value.name !== name) return {
       ...value,
-      lastUsed: false,
     }
 
     return {
       ...value,
-      lastUsed: true,
       media: [
         ...value.media,
         anime
@@ -72,7 +69,6 @@ export const addCollection = (name: string) => {
     {
       name,
       media: [],
-      lastUsed: false,
     },
   ])
 }

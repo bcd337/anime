@@ -1,7 +1,7 @@
 import modal from 'modal'
 import { isDuplicate } from 'hooks/useCollection'
 
-const createCollectionName = (): Promise<string> => modal.fire({
+export const createCollectionName = (): Promise<string> => modal.fire({
   title: <p>Please Input Collection Name:</p>,
   input: 'text',
   inputPlaceholder: 'Enter Collection Name',
