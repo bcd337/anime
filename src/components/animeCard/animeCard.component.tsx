@@ -45,7 +45,7 @@ const AnimeCard: React.FC<{
           />
         )}
       </ContainerImage>
-      {showTitle && <TitleContainer>{showTitle}</TitleContainer>}
+      {showTitle && <TitleContainer data-testid="AnimeCard-TitleContainer">{showTitle}</TitleContainer>}
     </Container>
   )
 }

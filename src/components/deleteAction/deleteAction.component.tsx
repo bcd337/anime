@@ -39,6 +39,7 @@ const DeleteAction: React.FC<{
       onClick={onRemove}
       className={className}
       title="Remove from collection"
+      data-testid="DeleteAction"
     >
       <IconTrash />
     </ContainerIcon>

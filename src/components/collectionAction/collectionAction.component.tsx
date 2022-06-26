@@ -69,6 +69,7 @@ const CollectionAction: React.FC<{
       love={!!collectionOfAnime.length}
       className={className}
       title={titleIcon}
+      data-testid="CollectionAction"
     >
       <IconHeart />
     </ContainerIcon>
