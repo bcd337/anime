@@ -8,7 +8,7 @@ const ButtonCicle: React.FC<{ className?: string, children: ReactNode, onClick?:
   title,
 }) => {
   return (
-    <Container className={className} onClick={onClick} title={title}>
+    <Container className={className} onClick={onClick} title={title} data-testid="ButtonCicle-Container">
       {children}
     </Container>
   )
