@@ -62,8 +62,8 @@ const UpdateCollection: React.FC<{
       ))}
       {create && (
         <CreateContainer colorFill={colorFill}>
-          <CreateInput onChange={changeName} value={name} placeholder="- Collection Name -"/>
-          <CreateButton onClick={onCreateCollection} colorFill={colorFill}>Create</CreateButton>
+          <CreateInput onChange={changeName} value={name} placeholder="- Collection Name -" data-testid="UpdateCollection-CreateInput"/>
+          <CreateButton onClick={onCreateCollection} colorFill={colorFill} data-testid="UpdateCollection-CreateButton">Create</CreateButton>
         </CreateContainer>
       )}
     </Container>
