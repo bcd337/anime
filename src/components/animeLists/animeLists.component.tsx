@@ -27,11 +27,11 @@ const AnimeLists: React.FC<{
   const re: LegacyRef<HTMLDivElement | null> = (r) => {
     ref(r)
   }
-  if (loading) return <p>Loading...</p>
+  if (loading) return <p data-testid="AnimeLists-loading">Loading...</p>
 
-  if (error) return <p>Error :(</p>
+  if (error) return <p data-testid="AnimeLists-error">Error :(</p>
 
-  if (!data) return <p>data not found(</p>
+  if (!data) return <p data-testid="AnimeLists-no-data">data not found(</p>
 
   return (
     <AnimeList>
@@ -45,7 +45,7 @@ const AnimeLists: React.FC<{
           />
         </ContainerLink>
       )}
-      {!morePageLoading && !pagingMode && <div ref={re} />}
+      {!morePageLoading && !pagingMode && <div ref={re} data-testid="AnimeLists-div" />}
     </AnimeList>
   )
 }
